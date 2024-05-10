@@ -142,3 +142,99 @@ Source: Conversation with Bing, 5/10/2024
 (2) The box model - Learn web development | MDN - MDN Web Docs. https://developer.mozilla.org/docs/Learn/CSS/Building_blocks/The_box_model.
 (3) Box model recap - Learn web development | MDN. http://devdoc.net/web/developer.mozilla.org/en-US/Learn/CSS/Styling_boxes/Box_model_recap.html.
 (4) CSS Box Sizing: How To Change Box Model Behavior - Artisan. https://domartisan.com/blog/css-box-sizing-how-to-change-box-model-behavior/.
+
+Certainly! Let's dive into each of these concepts:
+
+1. **Display Property**:
+   - The `display` property in CSS determines how an HTML element should be displayed on the webpage. It controls the rendering behavior of an element.
+   - Common values for the `display` property include:
+     - `block`: Makes the element a block-level container, taking up the entire width of its parent container. It starts on a new line.
+     - `inline`: Makes the element an inline-level container, allowing it to flow within the text content. It does not start on a new line.
+     - `inline-block`: Combines features of both `block` and `inline`. It behaves like an inline element but can have width, height, and padding.
+     - `none`: Hides the element completely (not even reserved space).
+   - Example:
+     ```css
+     .my-element {
+       display: block;
+     }
+     ```
+
+2. **Position Property**:
+   - The `position` property determines how an element is positioned within its containing element.
+   - Common values for the `position` property include:
+     - `static`: Default value. The element follows the normal flow of the document.
+     - `relative`: Positioned relative to its normal position. You can use `top`, `right`, `bottom`, and `left` properties to adjust its position.
+     - `absolute`: Positioned relative to the nearest positioned ancestor (or the initial containing block if none). It's taken out of the normal flow.
+     - `fixed`: Positioned relative to the viewport. It remains fixed even when scrolling.
+     - `sticky`: Acts like `relative` until the element reaches a certain scroll position, then becomes `fixed`.
+   - Example:
+     ```css
+     .my-element {
+       position: absolute;
+       top: 20px;
+       left: 50px;
+     }
+     ```
+
+3. **Box Model**:
+   - The CSS box model defines how elements are structured and positioned on a webpage.
+   - It consists of four parts:
+     - **Content**: The actual content (text, images) of the element.
+     - **Padding**: Clears an area around the content. It's transparent by default.
+     - **Border**: A border that goes around the padding and content.
+     - **Margin**: Clears an area outside the border. Also transparent.
+   - The total width and height of an element include content, padding, and border.
+   - Example:
+     ```css
+     .my-box {
+       width: 300px;
+       border: 15px solid green;
+       padding: 50px;
+       margin: 20px;
+     }
+     ```
+
+4. **Box Sizing Property**:
+   - The `box-sizing` property controls how the width and height of an element are calculated.
+   - Values:
+     - `content-box` (default): Width and height include only content (ignores padding and border).
+     - `border-box`: Width and height include content, padding, and border.
+   - Example:
+     ```css
+     .my-element {
+       box-sizing: border-box;
+     }
+     ```
+   - With `border-box`, padding and border are included in the total width and height¹³.
+
+Remember, these concepts play a crucial role in creating well-structured and visually appealing web layouts! 😊
+
+Source: Conversation with Bing, 5/10/2024
+(1) CSS Box Model - W3Schools. https://www.w3schools.com/Css/css_boxmodel.asp.
+(2) CSS Box Sizing - W3Schools. https://www.w3schools.com/csS/css3_box-sizing.asp.
+(3) CSS Box Sizing Property (With Examples) - Programiz. https://www.programiz.com/css/box-sizing.
+(4) CSS box-sizing Property - GeeksforGeeks. https://www.geeksforgeeks.org/css-box-sizing-property/.
+(5) CSS Box model - GeeksforGeeks. https://www.geeksforgeeks.org/css-box-model/.
+
+The <div> and <span> elements are both generic containers used in HTML to group together or apply styles to parts of a document, but they have different default behaviors which make them suitable for different purposes.
+
+<div> Element:
+Block-level Element: By default, a <div> is a block-level element. This means it starts on a new line and takes up the full width available, stretching out to the left and right as far as it can.
+Used for Layouts and Grouping: Because of its block-level behavior, <div> is often used to create the main structure of a webpage or to group elements together in a section for styling purposes or JavaScript functionality.
+Example:
+<div style="background-color: yellow;">
+  This is a div element.
+  <div>This is another div inside the first div.</div>
+</div>
+Copy
+<span> Element:
+Inline Element: In contrast, a <span> is an inline element. It does not start on a new line and only takes up as much width as necessary. This makes it ideal for styling or grouping a small section of text or inline elements without disrupting the flow of a document.
+Used for Text Styling: <span> is typically used to apply styles or classes to a small part of text or to wrap a text portion for JavaScript manipulation without affecting the document's layout.
+Example:
+<p>This is a paragraph with <span style="color: red;">a section of red text</span> inside it.</p>
+Copy
+Key Differences Summarized:
+Display: <div> is a block-level element; <span> is an inline element.
+Purpose: <div> is used for layout and to group larger blocks of content or containers, while <span> is used to style or target inline elements or portions of text.
+Effect on Layout: Inserting a <div> will generally affect the layout more significantly, as it creates a "box" that can push other content to a new line. A <span> seamlessly integrates with other inline content.
+Remember, choosing between <div> and <span> depends on the structural and stylistic needs of your content.

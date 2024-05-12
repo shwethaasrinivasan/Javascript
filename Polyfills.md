@@ -909,3 +909,18 @@ Source: Conversation with Bing, 5/10/2024
 (3) How to Code Pixel Perfect Design using Tailwind CSS - GeeksforGeeks. https://www.geeksforgeeks.org/how-to-code-pixel-perfect-design-using-tailwind-css/.
 (4) What is Pixel Perfect Design - Scalater Magazine. https://www.scalater.com/what-is-pixel-perfect-design/.
 (5) How to achieve Pixel Perfect front end practically?. https://blog.prototypr.io/how-to-achieve-pixel-perfect-front-end-practically-bd990390588.
+
+
+**Polyfills**
+
+Own implementation of bind method. If we keep any method inside function.prototype, all methods we write has access to those methods
+
+Function.prototype.mybind = function (...args) {
+   let obj = this; //this -> points to -> func() method
+   params = args.slice(1); will remove first element from list and return other elements
+ return function(...args2) {
+   obj.method(args[0], [...params,...args2]) //cannot use array as 2nd arg to call method so changing to apply method
+ }
+}
+
+![alt text](image-3.png)

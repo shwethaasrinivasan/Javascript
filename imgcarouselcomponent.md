@@ -178,3 +178,69 @@ Source: Conversation with Bing, 5/10/2024
 (24) github.com. https://github.com/MartinOpravil/aplikace-ples/tree/af2aa3369467b3646b996b6f6b91e19e4901c788/guest.php.
 (25) github.com. https://github.com/vitaliiptp/CatWatcher/tree/5122f3e40d156a73192c36c7f703b792de573e4a/carousel.js.
 (26) github.com. https://github.com/mshigezumi/JavaScript-Projects/tree/17a4971d70460c30e3d295b36d11f7b7883c1564/Portfolio_Site%2FJS%2FPortfolio.js.
+
+Certainly! Creating a responsive carousel ensures that it looks great on various screen sizes, from desktops to mobile devices. Let's explore how to achieve responsive design for carousels using CSS:
+
+1. **Flexbox Approach**:
+   - One effective way to create a responsive carousel is by using CSS Flexbox. Flexbox provides a flexible layout model that adapts well to different screen sizes.
+   - Here's an example of how you can structure your carousel using Flexbox:
+
+     ```css
+     .carousel {
+       display: flex;
+       overflow: auto; /* Enable horizontal scrolling */
+       scroll-snap-type: x mandatory; /* Snap to each item */
+       scroll-behavior: smooth; /* Smooth scrolling animation */
+     }
+
+     .carousel-item {
+       flex: 0 0 auto; /* Don't grow or shrink; maintain fixed width */
+       margin-right: 20px; /* Add spacing between items */
+       scroll-snap-align: start; /* Snap to the start of each item */
+       width: 100%; /* Take up the full width of the container */
+     }
+     ```
+
+   - In this example:
+     - `.carousel` represents the container for your carousel.
+     - `.carousel-item` represents each individual slide within the carousel.
+     - The `scroll-snap-*` properties ensure smooth snapping behavior when scrolling horizontally.
+     - The `flex` property ensures that each item maintains its original width.
+
+2. **Media Queries**:
+   - To make your carousel truly responsive, use media queries to adjust styles based on screen width.
+   - For example, you can change the number of visible slides or adjust spacing for different screen sizes.
+   - Here's a simplified example using media queries:
+
+     ```css
+     @media (max-width: 768px) {
+       .carousel-item {
+         margin-right: 10px; /* Smaller spacing for smaller screens */
+       }
+     }
+     ```
+
+3. **Viewport Units**:
+   - Consider using viewport units (such as `vw` and `vh`) for sizing elements within the carousel.
+   - For instance, you can set the image width relative to the viewport width:
+
+     ```css
+     .carousel-item img {
+       width: 80vw; /* 80% of the viewport width */
+       max-width: 100%; /* Ensure images don't exceed their original size */
+     }
+     ```
+
+4. **Test Responsiveness**:
+   - Always test your carousel on various devices and screen sizes to ensure it adapts correctly.
+   - Use browser developer tools to simulate different viewports and check for any layout issues.
+
+Remember that responsive design is essential for providing a consistent and user-friendly experience across different devices! 🌟📱🖥️
+
+For more carousel examples, you can explore free resources like [CSS Carousels](https://freefrontend.com/css-carousels/) ¹ or use popular libraries like Bootstrap's Carousel or Owl Carousel ³⁴. These resources offer pre-built solutions that you can customize to fit your project's needs. 😊
+
+Source: Conversation with Bing, 5/10/2024
+(1) 20+ CSS Carousels - Free Frontend. https://freefrontend.com/css-carousels/.
+(2) How to make Responsive Carousel in Bootstrap - GeeksforGeeks. https://www.geeksforgeeks.org/how-to-make-responsive-carousel-in-bootstrap/.
+(3) Create Responsive Carousels with Owl Carousel | HTML, CSS, JavaScript .... https://www.codewithfaraz.com/content/372/create-responsive-carousels-with-owl-carousel-html-css-javascript-tutorial.
+(4) Creating a responsive carousel with CSS | Reintech media. https://reintech.io/blog/creating-responsive-carousel-with-css.

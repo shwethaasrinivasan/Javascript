@@ -62,3 +62,52 @@ img {
 
 1. Class - can pass multiple classes for one element, <div class="top-section size" >, accessed by dot in css, like .size 
 2. Id - cannot pass multiple ids for one element, accessed by #
+
+
+
+**FlexBox** - Elements will be in column display - Flexbox positioning
+
+```css
+.container{
+    background-color: red;
+    height:300px; or 100vw - 100 view port;
+    display:flex;
+    flex-direction: row/column/row-reverse;
+    flex-wrap:no-wrap/wrap;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items:center/stretch/flex-start/flex-end;
+
+}
+
+**CSS Grid** - Elements will be in  row display
+
+.container{
+    background-color: #f2f2f2;
+    padding:10px;
+    margin:10px;
+    display:grid;
+    grid-template-rows: fr; //free space
+    grid-auto-flow: column;
+    grid-template-columns: 30px 50% 50px; or 1fr 1fr 1fr; 3rem ~ 40px
+    grid-gap: 80px;
+    grid-template-rows: minmax(100px, auto);
+    grid-template-rows:repeat(4, 300px); or (3, 1fr);
+    grid-template-columns: repeat(auto-fill,100px) or repeat(auto-fit, minmax(200px, 1fr)); //shrinks/wraps the section
+    grid-template-areas: 
+    "header header",
+    "section aside",
+    "footer footer";
+    justify-content: space-around;
+    align-items:center/stretch/flex-start/flex-end;
+    align-content: space-evenly;
+
+}
+
+.span {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column: 1 / 3; (same as grid-column start and end)
+    grid-column: span 3;
+    grid-area: span;
+};

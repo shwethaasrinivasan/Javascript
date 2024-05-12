@@ -27,3 +27,32 @@ Summary
 Use async for independent scripts that do not rely on other scripts or need to wait for the DOM to be ready, such as analytics.
 Use defer for scripts that need the whole document to be parsed before running, especially when script order matters.
 Both async and defer are useful for improving page load performance by allowing scripts to be downloaded in parallel with HTML parsing, but their use depends on the specific needs of the scripts being loaded.
+
+**Async/Defer**
+
+1. HTML Parsing
+2. Loading of script - fetching script, executing it
+
+<script src=" "/>
+
+Let's say browser is loading a webpage, browser is parsing an HTML and suddenly encounters script tag and stops parsing and fetches script from network and execute it then and there. 
+after script is fetched HTML parse starts after script is executed, till then HTML is paused. Javascript is blocking the rendering of HTML.
+
+<script async src=" "/>
+
+While using async attribute in script tag, meanwhile the HTML parsing goes on, any of script with asycn tag are fetched from network asyncronously along with HTML parsing. HTML parsing stops,
+scripts are executed then and there. once script is executed, HTML parsing continues like regular.
+
+<script defer src=" "/>
+
+While HTML parsing goes on, scripts are fetched in parallel from network, and the scripts executes only after HTML parsing completes.
+
+![alt text](image.png)
+
+NOTES:
+
+1. Async attribute does not guarantee order of execution of script but defer does. If async attr in multiple script where scripts are dependent on each other.
+on that case, async break the code so use defer when there are script dependencies.
+
+2. Load some external script, independent from normal script, then use async
+

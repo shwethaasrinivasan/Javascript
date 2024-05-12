@@ -21,7 +21,7 @@ Create a basic structure for displaying folders and files.
 
 Step 2: CSS Styling
 Add some basic styles in style.css to differentiate between files and folders.
-
+```css
 .folder {
   margin: 10px;
   padding: 5px;
@@ -38,7 +38,7 @@ Add some basic styles in style.css to differentiate between files and folders.
 
 Step 3: JavaScript Logic
 Implement the logic to display a file/folder structure in script.js. We'll mimic a file system structure using a JavaScript object and then render it.
-
+```js
 document.addEventListener('DOMContentLoaded', () => {
     const fileViewer = document.getElementById('fileViewer');
 

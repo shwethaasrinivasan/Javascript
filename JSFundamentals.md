@@ -40,7 +40,7 @@ square4: undefined
 
 n: 2
 
-when function is invoked - new execution context is created.
+when function is invoked - new execution context is created called Function Execution Context within Global Execution Context.
 
 ![alt text](image-8.png)
 
